@@ -11,6 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require ckeditor/init
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery-readyselector.js
+//= require bootstrap-sprockets
 //= require_tree .
+

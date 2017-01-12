@@ -1,0 +1,16 @@
+
+
+<%= form_for :article, url: articles_path do |f| =%>
+<p>
+    <%= f.label :title %><br>
+    <%=  f.text_field :title %>
+</p>
+<p class="ckeditor" >
+    <%= f.label :body %><br>
+    <%= f.cktext_area :body, rows: 10 %>
+</p>
+<%= f.hidden_field :author, :value => session[:user_id] %>
+<p>
+    <%= f.submit %>
+</p>
+<% end %>

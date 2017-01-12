@@ -1,5 +1,11 @@
 set :application, "deploy_test"
-set :repo_url, ""
+set :repo_url, "git@github.com:NicholasLYang/deploy_test.git"
+
+set :deploy_to, '/home/deploy/deploy_test'
+
+append :linked_files, "config/database.yml", "config/secrets.yml"
+append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
+
 namespace :deploy do
 
   after :restart, :clear_cache do
