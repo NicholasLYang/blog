@@ -25,12 +25,14 @@ require 'capistrano/deploy'
 
 require 'capistrano/rails'
 require 'capistrano/passenger'
+require 'capistrano/scm/git'
+
 
 # If you are using rbenv add these lines:
 require 'capistrano/rbenv'
 set :rbenv_type, :user
 set :rbenv_ruby, '2.3.1'
-
+install_plugin Capistrano::SCM::Git
 # If you are using rvm add these lines:
 # require 'capistrano/rvm'
 # set :rvm_type, :user
