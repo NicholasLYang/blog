@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DeployTest</title>
+    <title>Horribly Underqualified</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="<%= controller_name %><%= action_name%>">
+      <div class="header">
+          <div class="container">
+              <a class="header-link" href="/">
+              <div class="jumbotron">
+                  <h1>
+                          Horribly Underqualified
+                  </h1>
+              </div>
+              </a>
+          </div>
+          <div class="user-info">
+              <%= render "layouts/headerbar" %>
+          </div>
+      </div>
+      <% if flash[:alert] %>
+          <p id="notice"><%= flash[:alert] %></p>
+      <% end %>
+      <div class="article-body">
+          <%= yield %>
+      </div>
   </body>
 </html>
