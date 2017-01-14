@@ -1,0 +1,14 @@
+
+  <div class="article-div">
+      <h2> <%= @article.title %> </h2>
+      <i> <%= @article.created_at.to_formatted_s(:short) %> </i> <br>
+       <%= User.find(@article.author).name.capitalize %> 
+      <div class="article-body">
+          <%= raw(@article.body) %>
+      </div>
+      <%= link_to 'Home', controller: 'articles' %>
+  </div>
+
+
+
+
