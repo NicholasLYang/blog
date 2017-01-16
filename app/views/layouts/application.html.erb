@@ -15,7 +15,6 @@
     <body class="<%= controller_name %><%= action_name%>">
         
         <div class="header">
-            <div class="container">
                 <a class="header-link" href="/">
                     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
                         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,7 +50,6 @@
             <div class="user-info">
                 <%= render "layouts/headerbar" %>
             </div>
-        </div>
         <% if flash[:alert] %>
             <p id="notice"><%= flash[:alert] %></p>
         <% end %>
