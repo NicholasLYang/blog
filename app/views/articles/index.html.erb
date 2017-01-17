@@ -1,6 +1,7 @@
   <% @articles.each do |article| %>
       <div class="article-div">
-          <h2><%=  article.title %></h2>
+        <h2><%=  article.title %></h2>
+        <i> <%= User.find(article.author).name.capitalize %> </i> <br>
           <%=  raw(article.body.truncate(300, omission: '....'))  %>
           <%= link_to 'Show More', article_path(article) %>
       </div>
