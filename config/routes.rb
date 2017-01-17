@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   resources :sessions
   get 'articles/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'articles#index'
+  root 'welcome#index'
 end
