@@ -1,7 +1,7 @@
   <% @articles.each do |article| %>
       <div class="article-div">
           <h2><%=  article.title %></h2>
-          <%=  raw(article.body)[0, 100]  %>
+          <%=  raw(article.body.truncate(300, omission: '....'))  %>
           <%= link_to 'Show More', article_path(article) %>
       </div>
   <% end %>

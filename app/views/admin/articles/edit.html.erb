@@ -1,6 +1,9 @@
+<%= javascript_include_tag "application" %>
+<%= javascript_include_tag Ckeditor.cdn_url %>
 
+<h1> Editing <%= @article %> </h1>
 
-<%= form_for @article, url: admin_articles_path do |f| =%>
+<%= form_for @article, url: admin_article_path do |f| =%>
 
 <% if @article.errors.any? %>
     <div id="error_explanation">
@@ -15,6 +18,7 @@
         </ul>
     </div>
 <% end %>
+
 <p>
     <%= f.label :title %><br>
     <%=  f.text_field :title %>
@@ -28,3 +32,6 @@
     <%= f.submit %>
 </p>
 <% end %>
+
+
+<%= link_to 'Home', controller: 'articles' %>
