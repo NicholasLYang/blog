@@ -32,7 +32,6 @@ Ckeditor.setup do |config|
   # Asset model classes
   # config.picture_model { Ckeditor::Picture }
   # config.attachment_file_model { Ckeditor::AttachmentFile }
-
   # Paginate assets
   # By default: 24
   # config.default_per_page = 24
