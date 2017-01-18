@@ -1,13 +1,14 @@
-        <% @articles.each do |article| %>
-          <tr>
-              <td><%=  article.title %></td>
-              <td><%=  raw(article.body.truncate(300, omission: '....'))  %></td>
-              <td><%= link_to 'Show', article_path(article) %></td>
-              <td><%= link_to 'Edit', edit_admin_article_path(article) %></td>
-              <td><%= link_to 'Destroy', admin_article_path(article),
-                  method: :delete,
-                  data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-          </tr>
-      <% end %>
-  
+<% @articles.each do |article| %>
+    <div class="admin-article">
+        <tr>
+            <td><%=  article.title %></td>
+            <td><%=  raw(article.body.truncate(300, omission: '....'))  %></td>
+            <td><%= link_to 'Show', article_path(article) %></td>
+            <td><%= link_to 'Edit', edit_admin_article_path(article) %></td>
+            <td><%= link_to 'Destroy', admin_article_path(article),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+    </div>
+<% end %>
+

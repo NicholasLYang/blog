@@ -28,18 +28,18 @@ a.header-link:hover {
     color: rgb(170, 170, 170);
 }
 
-a.userinfo-link:hover {
+a.headerbar-link:hover {
     color: rgb(170, 170, 170);
 }
 
-a.userinfo-link {
+a.headerbar-link {
     color: rgb(100, 100, 100);
     font-size: 20px;
     padding: 1%;
     padding-top: 2%;
 }
 
-a.userinfo-link:hover {
+a.headerbar-link:hover {
     background-color: transparent;
 }
 table {
@@ -63,11 +63,19 @@ button {
     padding-left: 5%;
 }
 
-.user-info {
+.header-bar {
+    padding-top: 10px;
     padding-left: 5%;
 }
 
-
+.user-bar {
+    position: fixed;
+    right: 0px;
+    padding-right: 5%;
+}
+.admin-article {
+    padding-bottom: 10px;
+}
 .ckeditor {
     padding-right: 8%;
 }

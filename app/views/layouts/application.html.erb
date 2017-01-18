@@ -20,8 +20,11 @@
                 Because I have no idea what I'm talking about 
                 <% end  %>
         </div>
-            <div class="user-info">
-                <%= render "layouts/headerbar" %>
+            <div class="header-bar">
+                <%= render 'layouts/headerbar' %>
+            </div>
+            <div class="user-bar">
+                <%= render 'layouts/userbar' %>
             </div>
         <% if flash[:alert] %>
             <p id="notice"><%= flash[:alert] %></p>
