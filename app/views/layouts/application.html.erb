@@ -20,10 +20,10 @@
                 Because I have no idea what I'm talking about 
                 <% end  %>
         </div>
-            <div class="header-bar">
+        <div class="header-bar" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <%= render 'layouts/headerbar' %>
             </div>
-            <div class="user-bar">
+            <div class="user-bar" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <%= render 'layouts/userbar' %>
             </div>
         <% if flash[:alert] %>

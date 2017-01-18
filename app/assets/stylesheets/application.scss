@@ -20,9 +20,28 @@
     //padding-left: 5%;
     padding-right: 8%;
     word-wrap: break-word;
-    width: 400px;
+    max-width: 1000px;
 }
 
+.header-bar {
+    position: fixed;
+    width: 200px;
+    padding: 20px;
+    left: 5%;
+    border-style: solid;
+    background-color: white;
+    z-index: 100;
+}
+
+.user-bar {
+    position: fixed;
+    right: 100px;
+    padding: 10px;
+    background-color: white;
+    z-index: 100;
+    padding-right: 5%;
+    border-style: solid;
+}
 
 a.header-link:hover {
     text-decoration: none;
@@ -55,6 +74,7 @@ table {
 div.header{
     padding-bottom: 1%;
     line-height: 1.5;
+    padding-right: 75%;
 }
 
 button {
@@ -62,19 +82,11 @@ button {
 }
 
 .article-div {
+    padding-top: 50px;
     padding-left: 5%;
 }
 
-.header-bar {
-    padding-top: 10px;
-    padding-left: 5%;
-}
 
-.user-bar {
-    position: fixed;
-    right: 0px;
-    padding-right: 5%;
-}
 .admin-article {
     padding-bottom: 10px;
 }
