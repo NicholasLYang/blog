@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   skip_before_action :authorize, only: [:index, :show]
 
   def index
-    @articles = Article.all
+    @articles = Article.all(:order => "created_at DESC")
   end
 
   def show
