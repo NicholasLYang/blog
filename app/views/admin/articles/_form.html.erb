@@ -1,6 +1,6 @@
 
 
-<%= form_for @article do |f| =%>
+<%= form_for @article, url: admin_articles_path do |f| =%>
 
 <% if @article.errors.any? %>
     <div id="error_explanation">
@@ -23,7 +23,7 @@
     <%= f.label :body %><br>
     <%= f.cktext_area :body, rows: 10 %>
 </p>
-<%= f.hidden_field :author, :value => session[:user_id] %>
+<%= f.hidden_field :user_id, :value => session[:user_id] %>
 <p>
     <%= f.submit %>
 </p>

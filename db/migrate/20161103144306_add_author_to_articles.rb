@@ -1,5 +1,5 @@
 class AddAuthorToArticles < ActiveRecord::Migration[5.0]
   def change
-    add_column :articles, :author, :integer
+    add_reference :articles, :user, foreign_key: true
   end
 end

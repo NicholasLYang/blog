@@ -10,8 +10,13 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :articles, :comments
   end
-  resources :users
-  resources  :articles
+  resources :users do
+    resources :articles
+  end
+  
+  resources  :articles do
+    resources :comments
+  end
   resources :sessions
   get 'articles/index'
   get 'welcome/index'

@@ -27,11 +27,12 @@
     <%= f.label :body %><br>
     <%= f.cktext_area :body, rows: 10 %>
 </p>
-<%= f.hidden_field :author, :value => session[:user_id] %>
+<%= f.hidden_field :user_id, :value => session[:user_id] %>
 <p>
     <%= f.submit %>
 </p>
 <% end %>
 
+<%= render 'form' %>
 
 <%= link_to 'Home', controller: 'articles' %>

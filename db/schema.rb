@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170111200235) do
+ActiveRecord::Schema.define(version: 20170122050809) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text     "body"
-    t.integer  "author"
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
@@ -34,6 +35,16 @@ ActiveRecord::Schema.define(version: 20170111200235) do
     t.datetime "updated_at",                   null: false
     t.index ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
     t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "article_id"
+    t.integer  "users_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_comments_on_article_id"
+    t.index ["users_id"], name: "index_comments_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|

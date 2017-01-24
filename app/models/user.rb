@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   validates :name, presence: true, uniqueness: true
+  has_many :comments
+  has_many :articles
   has_secure_password
 
   def User.admin_new(user_params)
