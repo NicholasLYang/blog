@@ -17,18 +17,22 @@
         <div class="header">
             <%= link_to root_path, :class => 'header-link' do %>
                 <h1> Horribly Underqualified </h1>
-                Because I have no idea what I'm talking about 
+                Because I have no idea what I'm talking about
                 <% end  %>
         </div>
         <div class="header-bar" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <%= render 'layouts/headerbar' %>
-            </div>
-            <div class="user-bar" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <%= render 'layouts/userbar' %>
-            </div>
+            <%= render 'layouts/headerbar' %>
+        </div>
+        <div class="user-bar" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <%= render 'layouts/userbar' %>
+        </div>
         <% if flash[:alert] %>
-            <p id="notice"><%= flash[:alert] %></p>
-        <% end %>
+            <div class="alert-bar">
+                <h2 id="notice">
+                    <%= flash[:alert] %>
+                </h2>
+            </div>
+            <% end %>
         <div class="body">
             <%= yield %>
         </div>

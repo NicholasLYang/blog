@@ -8,12 +8,12 @@ Rails.application.routes.draw do
     get 'logout' => :destroy
   end
   namespace :admin do
-    resources :articles, :comments
+    resources :articles
   end
   resources :users do
     resources :articles
   end
-  
+
   resources  :articles do
     resources :comments
   end

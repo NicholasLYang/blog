@@ -2,39 +2,16 @@
   <div class="article-div">
       <h2> <%= @article.title %> </h2>
       <i> <%= @article.created_at.to_formatted_s(:short) %> </i> <br>
-       <%= User.find(@article.user_id).name.capitalize %> 
+       <%= User.find(@article.user_id).name.capitalize %>
       <div class="article-body">
           <%= raw(@article.body) %>
       </div>
+      <h2>Comments</h2>
+      <%= render @article.comments %>
+      <%= render "comments/form" %>
       <%= link_to 'Home', controller: 'articles' %>
   </div>
-  <div class="comment">
-      <h2>Comments</h2>
-      <% @article.comments.each do |comment| %>
-          <p>
-              <strong>Commenter:</strong>
-              <%= comment.user_id %>
-          </p>
 
-          <p>
-              <strong>Comment:</strong>
-              <%= comment.body %>
-          </p>
-      <% end %>
-  </div>
-  <div class="comment-form">
-      <h2>Add a comment:</h2>
-      <%= form_for([@article, @article.comments.build]) do |f| %>
-          <p class="ckeditor">
-              <%= f.label :body %><br>
-              <%= f.cktext_area :body, rows: 2 %>
-          </p>
-          <%= f.hidden_field :user_id, :value => session[:user_id] %>
-          <p>
-              <%= f.submit %>
-          </p>
-      <% end %>
-  </div>
 
 
 
