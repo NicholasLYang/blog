@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :check_admin, only: [:destroy]
   skip_before_action :authorize, only: [:new, :create]
 
   # GET /users
@@ -28,7 +29,7 @@ class UsersController < ApplicationController
     @user = User.admin_new(user_params)
     respond_to do |format|
       if @user.save
-        format.html { redirect_to users_url, notice: "User #{@user.name} was successfully created."}
+        format.html { redirect_to users_url, flash[:notice] = "User #{@user.name} was successfully created."}
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to users_url, notice: "User #{@user.name} was successfully updated." }
+        format.html { redirect_to users_url, flash[:notice] = "User #{@user.name} was successfully updated." }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -55,11 +56,11 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     if @user.is_admin
-      format.html { redirect_to users_url, notice: 'Cannot delete admin'}
+      format.html { redirect_to users_url, flash[:notice] = 'Admin cannot be deleted.' }
     end
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to users_url, flash[:notice] = 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

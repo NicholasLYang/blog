@@ -26,10 +26,10 @@
         <div class="user-bar" ondrop="drop(event)" ondragover="allowDrop(event)">
             <%= render 'layouts/userbar' %>
         </div>
-        <% if flash[:alert] %>
+        <% if flash[:notice] %>
             <div class="alert-bar">
                 <h2 id="notice">
-                    <%= flash[:alert] %>
+                    <%= flash[:notice] %>
                 </h2>
             </div>
             <% end %>
