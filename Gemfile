@@ -57,7 +57,7 @@ gem 'capistrano-rbenv', '~> 2.1'
 
 # Add this if you're using rvm
 # gem 'capistrano-rvm'
-gem 'ckeditor'
+gem 'ckeditor', '4.2'
 gem 'paperclip'
 gem 'bootstrap-sass'
 gem 'bcrypt'
