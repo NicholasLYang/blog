@@ -213,7 +213,7 @@ DEPENDENCIES
   capistrano-passenger (~> 0.2.0)
   capistrano-rails (~> 1.2)
   capistrano-rbenv (~> 2.1)
-  ckeditor
+  ckeditor (= 4.2)
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   jquery-rails
