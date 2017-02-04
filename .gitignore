@@ -26,6 +26,7 @@ capybara-*.html
 /db/*.sqlite3-journal
 /public/system
 /public/ckeditor_assets
+/public/assets/*
 /coverage/
 /spec/tmp
 **.orig

@@ -24,6 +24,11 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
+<<<<<<< HEAD
+=======
+  config.assets.debug = true
+
+>>>>>>> 8e838d3cc60ca41f483747f75400059ff0c2d6d3
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
