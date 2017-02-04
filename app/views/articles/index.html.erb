@@ -1,8 +1,9 @@
   <% @articles.reverse_each do |article| %>
       <div class="article-div">
         <h2><%=  article.title %></h2>
-        <i> <%= User.find(article.user_id).name.capitalize %> </i> <br>
-          <%=  raw(article.body.truncate(300, omission: '....'))  %>
-          <%= link_to 'Show More', article_path(article) %>
+        <i> <%= article.user.name.capitalize %> </i> <br>
+        <%=  raw(article.body.truncate(300, omission: '....</p>'))  %> 
+        <%= link_to 'Show More', article_path(article) %> <br>
+        <strong> <%= pluralize(article.comments.count, 'Comments') %>  </strong>
       </div>
   <% end %>
