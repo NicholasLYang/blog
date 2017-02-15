@@ -6,7 +6,7 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:article][:user_id])
+    @user = current_user
     @article = Article.new(article_params)
     if @article.save
       redirect_to @article
