@@ -6,8 +6,7 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def create
-    @user = current_user
-    @article = Article.new(article_params)
+    @article = current_user.articles.new(article_params)
     if @article.save
       redirect_to @article
     else
@@ -16,9 +15,7 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def update
-    @user = User.find(session[:user_id])
-    @article = Article.find(params[:id])
-
+    @article = current_user.articles.update(article_params)
     if @article.update(article_params)
       redirect_to @article
     else
@@ -27,7 +24,7 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def new
-    @article = Article.new
+    @article = current_user.articles.build
   end
 
   def show
@@ -46,6 +43,6 @@ class Admin::ArticlesController < ApplicationController
 
   private
   def article_params
-    params.require(:article).permit(:title, :body, :user_id)
+    params.require(:article).permit(:title, :body)
   end
 end
