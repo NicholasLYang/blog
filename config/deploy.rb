@@ -1,7 +1,7 @@
 set :application, "blog"
 set :repo_url, "git@github.com:NicholasLYang/blog.git"
 
-set :deploy_to, '/home/deploy/blog'
+set :deploy_to, '/home/staging/blog'
 
 append :linked_files, "config/database.yml", "config/secrets.yml"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"

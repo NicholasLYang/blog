@@ -1,23 +1,15 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   mount Ckeditor::Engine => '/ckeditor'
-  controller :sessions do
-    get 'login' => :new
-    post 'login' => :create
-    delete 'logout' => :destroy
-    get 'logout' => :destroy
-  end
   namespace :admin do
-    resources :articles
-  end
-  resources :users do
     resources :articles
   end
 
   resources  :articles do
     resources :comments
   end
-  resources :sessions
+#  resources :sessions
   get 'articles/index'
   get 'welcome/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

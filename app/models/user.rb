@@ -1,11 +1,11 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
   validates :name, presence: true, uniqueness: true
   has_many :comments
   has_many :articles
-  has_secure_password
 
-  def User.admin_new(user_params)
-    user_params['is_admin'] = user_params['name'] == 'nicholas'
-    new(user_params)
-  end
 end
