@@ -18,7 +18,7 @@
 .body {
     padding-top: 5%;
     padding-left: 5%;
-    padding-right: 8%;
+    padding-right: 10%;
     word-wrap: break-word;
     max-width: 900px;
 }
@@ -46,18 +46,28 @@
 
 .alert-bar {
     @extend .bar;
+    display: inline-block;
     top: 40%;
     left: 5%;
     padding: 10px;
+}
+
+.form {
+    padding-top: 5%
+}
+
+.signup-form {
+    @extend .form
+}
+
+.login-form {
+    @extend .form
 }
 
 .adminarticle-list {
     padding-top: 3%;
 }
 
-.login-form {
-    padding-top: 12%
-}
 a.header-link:hover {
     text-decoration: none;
     background-color: transparent;
