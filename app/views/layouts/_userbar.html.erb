@@ -6,5 +6,6 @@ Welcome<%= ' ' + current_user[:name].capitalize if current_user %>! <br>
         <%= link_to 'List Posts', admin_articles_path, class: 'userinfo-link', method: :get %>
     <% end %>
 <% else %>
-    <%= link_to 'Login', new_user_session_path, class: 'userinfo-link', method: :get %>
+<%= link_to 'Login', new_user_session_path, class: 'userinfo-link', method: :get %>
+<%= link_to 'Create User', new_user_registration_path, class: 'userinfo-link'%>
 <% end %>
