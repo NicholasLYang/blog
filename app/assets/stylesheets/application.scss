@@ -119,10 +119,13 @@ button {
     padding-right: 8%;
 }
 
-@media (max-device-width: 480px) {
+@media (max-device-width: 600px) {
     .bar {
         position: static;
         margin: 10px;
+    }
+    .user-bar {
+        width: 125px
     }
     .tagline {
         width: 200px;
