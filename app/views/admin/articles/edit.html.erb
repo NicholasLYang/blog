@@ -1,7 +1,6 @@
 <%= javascript_include_tag "application" %>
-<%= javascript_include_tag Ckeditor.cdn_url %>
 
-<h1> Editing <%= @article %> </h1>
+<h1> Editing "<%= @article.title %>" </h1>
 
 <%= form_for @article, url: admin_article_path do |f| =%>
 
@@ -27,12 +26,9 @@
     <%= f.label :body %><br>
     <%= f.cktext_area :body, rows: 10 %>
 </p>
-<%= f.hidden_field :user_id, :value => session[:user_id] %>
 <p>
     <%= f.submit %>
 </p>
 <% end %>
-
-<%= render 'form' %>
 
 <%= link_to 'Home', controller: 'articles' %>
