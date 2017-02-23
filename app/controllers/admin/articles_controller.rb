@@ -2,7 +2,7 @@ class Admin::ArticlesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @articles = Article.all
+    @articles = Article.order(:created_at)
   end
 
   def create
