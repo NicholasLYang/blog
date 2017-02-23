@@ -1,4 +1,5 @@
-  <% @articles.reverse_each do |article| %>
+<h3> <%= @tag if @tag.present? %> </h3>
+<% @articles.reverse_each do |article| %>
       <div class="article-div">
         <h2><%=  article.title %></h2>
         <i> <%= article.user.name.capitalize %> </i> <br>

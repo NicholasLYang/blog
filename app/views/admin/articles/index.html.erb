@@ -1,5 +1,5 @@
 <div class="adminarticle-list">
-  <% @articles.each do |article| %>
+  <% @articles.reverse_each do |article| %>
   <div class="admin-article">
     <tr>
       <td><strong><%=  article.title %></td></strong>

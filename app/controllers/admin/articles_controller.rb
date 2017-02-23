@@ -4,9 +4,9 @@ class Admin::ArticlesController < ApplicationController
   def index
     @articles = Article.all
   end
-
   def create
     @article = current_user.articles.new(article_params)
+    @article.tag_list.add("main") if @article.tag_list.empty?
     if @article.save
       redirect_to @article
     else
@@ -27,10 +27,6 @@ class Admin::ArticlesController < ApplicationController
     @article = current_user.articles.build
   end
 
-  def show
-    @article = Article.find(params[:id])
-  end
-
   def edit
     @article = Article.find(params[:id])
   end
@@ -38,7 +34,7 @@ class Admin::ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-    redirect_to articles_path
+    redirect_to admin_articles_path
   end
 
   private

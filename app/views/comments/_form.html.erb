@@ -2,7 +2,7 @@
     <h2>Add a comment:</h2>
     <%= form_for([@article, @article.comments.build]) do |f| %>
         <p class="ckeditor">
-            <%= f.text_area :body, rows: 10, cols: 30 %>
+            <%= f.text_area :body, rows: 10, cols: 50 %>
         </p>
         <%= f.hidden_field :user_id, :value => session[:user_id] %>
         <p>

@@ -4,8 +4,9 @@ class ArticlesController < ApplicationController
   def index
     if params[:tag]
       @articles = Article.tagged_with(params[:tag])
+      @tag = params[:tag]
     else
-      @articles = Article.all
+      @articles = Article.tagged_with("main")
     end
 
   end
