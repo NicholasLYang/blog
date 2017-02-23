@@ -1,6 +1,11 @@
 class ArticlesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
+  def index_all
+    @articles = Article.all
+    render 'index'
+  end
+
   def index
     if params[:tag]
       @articles = Article.tagged_with(params[:tag])
