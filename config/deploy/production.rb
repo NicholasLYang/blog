@@ -9,6 +9,7 @@
 
 server '45.55.207.182', user: 'deploy', roles: %w{app db web}
 
+set :branch, 'master'
 
 # role-based syntax
 # ==================

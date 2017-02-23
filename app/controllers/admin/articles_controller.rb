@@ -4,6 +4,7 @@ class Admin::ArticlesController < ApplicationController
   def index
     @articles = Article.all
   end
+
   def create
     @article = current_user.articles.new(article_params)
     @article.tag_list.add("main") if @article.tag_list.empty?
