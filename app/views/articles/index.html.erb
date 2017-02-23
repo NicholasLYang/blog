@@ -1,10 +1,13 @@
 <h3> <%= @tag if @tag.present? %> </h3>
+
 <% @articles.reverse_each do |article| %>
-      <div class="article-div">
-        <h2><%=  article.title %></h2>
-        <i> <%= article.user.name.capitalize %> </i> <br>
-        <%=  raw(article.body.truncate(300, omission: '....</p>'))  %> 
-        <%= link_to 'Show More', article_path(article) %> <br>
-        <strong> <%= pluralize(article.comments.count, 'Comments') %>  </strong>
-      </div>
+<div class="article-div">
+  <%= link_to(article) do %>
+    <h2><%=  article.title %></h2>
   <% end %>
+  <i> <%= article.user.name.capitalize %> </i> <br>
+  <%=  raw(article.body.truncate(300, omission: '....</p>'))  %> 
+  <%= link_to 'Show More', article_path(article) %> <br>
+  <strong> <%= pluralize(article.comments.count, 'Comments') %>  </strong>
+</div>
+<% end %>
