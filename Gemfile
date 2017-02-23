@@ -67,3 +67,5 @@ gem 'pry-rails', :group => :development
 gem 'devise'
 
 gem 'omniauth-facebook'
+
+gem 'acts-as-taggable-on', '~> 4.0'
