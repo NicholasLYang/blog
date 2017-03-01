@@ -69,3 +69,4 @@ gem 'devise'
 gem 'omniauth-facebook'
 
 gem 'acts-as-taggable-on', '~> 4.0'
+gem 'opal-rails'
