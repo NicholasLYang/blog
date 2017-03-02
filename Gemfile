@@ -60,7 +60,6 @@ gem 'ckeditor', github: 'galetahub/ckeditor'
 
 
 gem 'paperclip'
-gem 'bootstrap-sass'
 gem 'bcrypt'
 
 gem 'pry-rails', :group => :development
