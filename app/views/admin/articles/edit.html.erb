@@ -27,7 +27,7 @@
     </p>
     <p>
         <%= f.label :tag_list %><br>
-        <%= f.text_field :tag_list %>
+        <%= f.text_field :tag_list, value: @article.tag_list.join(", ") %>
     </p>
     <p>
         <%= f.submit %>
