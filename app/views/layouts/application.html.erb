@@ -36,7 +36,8 @@
                 </h2>
             </div>
             <% end %>
-        <div class="body">
+            <div class="body">
+              <%= Rails.application.assets.find_asset('application.css').digest_path %>
             <%= yield %>
         </div>
     </body>
