@@ -1,1 +1,1 @@
-config.disableNativeSpellChecker = false;
+
