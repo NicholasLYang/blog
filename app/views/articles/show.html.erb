@@ -1,20 +1,29 @@
 
-  <div class="article-div">
-      <h2> <%= @article.title %> </h2>
-      <i> <%= @article.created_at.to_formatted_s(:short) %> </i> <br>
-       <%= User.find(@article.user_id).name.capitalize %>
-      <div class="article-body">
-          <%= raw(@article.body) %>
-      </div>
-      <h3> Tags </h3>
-      <p>
+<div class="article-div">
+    <h2> <%= @article.title %> </h2>
+    <i> <%= @article.created_at.to_formatted_s(:short) %> </i> <br>
+    <%= User.find(@article.user_id).name.capitalize %>
+    <div class="article-body">
+        <%= raw(@article.body) %>
+    </div>
+    <h3> Tags </h3>
+    <p>
         <%= raw(@article.tag_list.map { |tag| link_to tag, tag_path(tag) }.join(', ')) %>
-      </p>
-      <h2>Comments</h2>
-      <%= render @article.comments %>
-      <%= render "comments/form" %>
-      <%= link_to 'Home', controller: 'articles' %>
-  </div>
+    </p>
+    <% if current_user.is_admin? %>
+        <h3> Admin Tools<h3>
+        <p>
+            <%= link_to 'Edit', edit_admin_article_path(@article) %>
+            <%= link_to 'Destroy', admin_article_path(@article),
+                                                method: :delete,
+                                                data: { confirm: 'Are you sure?' } %>
+        </p>
+    <% end %>
+    <h2>Comments</h2>
+    <%= render @article.comments %>
+    <%= render "comments/form" %>
+    <%= link_to 'Home', controller: 'articles' %>
+</div>
 
 
 
