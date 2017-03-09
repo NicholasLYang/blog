@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is the repo for source code of my blog, Horribly Underqualified. It's a Rails application with a Postgres database.
+It's deployed on a DigitalOcean server using Capistrano. Right now I'm in the process of adding more features. You can
+check it out [here](https://horriblyunderqualified.com)
