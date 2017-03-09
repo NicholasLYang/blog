@@ -15,5 +15,4 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'all', to: 'articles#index_all'
   get 'tags/:tag', to: 'articles#index', as: :tag
-  
 end
