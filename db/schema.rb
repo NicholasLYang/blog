@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20170309205417) do
     t.datetime "updated_at", null: false
     t.text     "body"
     t.integer  "user_id"
-    t.string   "slug"
     t.index ["user_id"], name: "index_articles_on_user_id", using: :btree
   end
 
