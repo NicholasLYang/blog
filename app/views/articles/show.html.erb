@@ -10,7 +10,7 @@
     <p>
         <%= raw(@article.tag_list.map { |tag| link_to tag, tag_path(tag) }.join(', ')) %>
     </p>
-    <% if current_user.is_admin? %>
+    <% unless current_user.nil? || !current_user.is_admin? %>
         <h3> Admin Tools<h3>
         <p>
             <%= link_to 'Edit', edit_admin_article_path(@article) %>
