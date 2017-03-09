@@ -58,13 +58,19 @@ gem 'capistrano-rbenv', '~> 2.1'
 
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
-
+#Uploading
 gem 'paperclip'
+# Hashing, though may be deprecated because of devise
 gem 'bcrypt'
 
 gem 'pry-rails', :group => :development
+
+# User authentication
 gem 'devise'
 
+# TODO: Add OmniAuth
 gem 'omniauth-facebook'
 
+# tags for posts
 gem 'acts-as-taggable-on', '~> 4.0'
+

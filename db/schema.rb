@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222232139) do
+ActiveRecord::Schema.define(version: 20170309205417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,9 @@ ActiveRecord::Schema.define(version: 20170222232139) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text     "body"
-    t.string   "author"
+    t.integer  "user_id"
+    t.string   "slug"
+    t.index ["user_id"], name: "index_articles_on_user_id", using: :btree
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
@@ -76,7 +78,7 @@ ActiveRecord::Schema.define(version: 20170222232139) do
     t.string   "password_digest"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.boolean  "is_admin?"
+    t.boolean  "is_admin"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -98,6 +100,7 @@ ActiveRecord::Schema.define(version: 20170222232139) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "articles", "users"
   add_foreign_key "comments", "articles"
   add_foreign_key "comments", "users"
 end
