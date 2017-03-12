@@ -8,11 +8,12 @@ class ArticlesController < ApplicationController
 
   def index
     if params[:tag]
-      @articles = Article.tagged_with(params[:tag])
+      articles = Article.tagged_with(params[:tag])
       @tag = params[:tag]
     else
-      @articles = Article.tagged_with("main")
+      articles = Article.tagged_with("main")
     end
+    @articles = articles.sort_by{ |e| e[:created_at] }
 
   end
 

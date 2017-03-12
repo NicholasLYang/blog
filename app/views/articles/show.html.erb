@@ -21,7 +21,9 @@
     <% end %>
     <h2>Comments</h2>
     <%= render @article.comments %>
-    <%= render "comments/form" %>
+    <% unless current_user.nil? %>
+        <%= render "comments/form" %>
+    <% end %>
     <%= link_to 'Home', controller: 'articles' %>
 </div>
 
