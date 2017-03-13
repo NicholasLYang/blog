@@ -39,33 +39,35 @@ h2 {
 .header-anchored {
     @extend .anchored;
     top: 2%;
+    margin-top: 2%;
 }
 
 .user-anchored {
     @extend .anchored;
     top: 7%;
     left: 5%;
+    margin-top: 5%;
 }
 
 .bar {
     z-index: 100;
     border-style: solid;
     background-color: white;
-    -webkit-transition: all 0.8s ease;
-    transition: all 0.8s ease;
+//    -webkit-transition: all 0.8s ease;
+//    transition: all 0.8s ease;
 }
 
 .header-bar {
     @extend .bar;
     width: 200px;
     padding: 20px;
+    margin-bottom: 1%;
     left: 5%;
 }
 
 
 .user-bar {
     @extend .bar;
-    margin-top: 20px;
     padding: 10px;
     display: inline-block;
 }
