@@ -1,5 +1,5 @@
 /*
- * This is a t'll be compiled into application.css, which will include all the files
+ * This is a file that will be compiled into application.css, which will include all the files
  * listed below.
  *
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
@@ -21,6 +21,7 @@ a:hover {
 h1 {
     line-height: 1.5em;
 }
+
 h2 {
     line-height: 1.25em;
 }
@@ -31,12 +32,27 @@ h2 {
     word-wrap: break-word;
     max-width: 1000px;
 }
+.anchored {
+    position: fixed;
+}
+
+.header-anchored {
+    @extend .anchored;
+    top: 2%;
+}
+
+.user-anchored {
+    @extend .anchored;
+    top: 7%;
+    left: 5%;
+}
 
 .bar {
-    position: fixed;
     z-index: 100;
     border-style: solid;
     background-color: white;
+    -webkit-transition: all 0.8s ease;
+    transition: all 0.8s ease;
 }
 
 .header-bar {
@@ -49,16 +65,16 @@ h2 {
 
 .user-bar {
     @extend .bar;
-    right: 100px;
+    margin-top: 20px;
     padding: 10px;
-    padding-right: 5%;
+    display: inline-block;
 }
 
 .alert-bar {
     @extend .bar;
     display: inline-block;
     top: 20%;
-    left: 5%;
+    left: 20%;
     float: top;
     padding: 10px;
 }
