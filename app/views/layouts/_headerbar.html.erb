@@ -1,5 +1,10 @@
-<span>
+<div class="header-bar max-header-bar">
+  <span class="header-bar-icon">
+    <%= image_tag "hamburger_icon.svg" %>
+  </span>
+  <span class="header-bar-main">
     <%= link_to 'Home', root_path, class: "headerbar-link", method: :get %>
     <%= link_to 'About', welcome_index_path, class: "headerbar-link" %>
     <%= link_to 'Posts', articles_path, class: "headerbar-link" %>
-</span>
+  </span>
+</div>
