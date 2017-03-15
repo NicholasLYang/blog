@@ -7,4 +7,9 @@
     <%= link_to 'About', welcome_index_path, class: "headerbar-link" %>
     <%= link_to 'Posts', articles_path, class: "headerbar-link" %>
   </span>
+  <ul class="header-bar-list">
+    <li> <%= link_to 'Home', root_path, class: "headerlist-link", method: :get %>
+    <li> <%= link_to 'About', welcome_index_path, class: "headerlist-link" %>
+    <li> <%= link_to 'Posts', articles_path, class: "headerlist-link" %>
+  </ul>
 </div>

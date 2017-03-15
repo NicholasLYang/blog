@@ -34,63 +34,6 @@ h2 {
     max-width: 1000px;
 }
 
-.bar {
-    position: fixed;
-    z-index: 100;
-    border-style: solid;
-    background-color: white;
-}
-
-.header-bar {
-    @extend .bar;
-    padding: 20px;
-    width: 200px;
-    margin-bottom: 1%;
-    left: 5%;
-
-}
-
-.max-header-bar {
-    .header-bar-icon {
-        display: none;
-    }
-    .header-bar-main {
-        display: inline;
-    }
-}
-
-.min-header-bar {
-    display: inline-block;
-    width: auto;
-    padding: 2px;
-    border-style: none;
-
-    .header-bar-main {
-        display: none;
-    }
-    .header-bar-icon {
-        display: inline;
-    }
-}
-
-
-.user-bar {
-    @extend .bar;
-    padding: 10px;
-    right: 5%;
-    display: inline-block;
-}
-
-.alert-bar {
-    @extend .bar;
-    display: inline-block;
-    top: 20%;
-    left: 20%;
-    float: top;
-    padding: 10px;
-}
-
-
 .form {
     padding-top: 5%
 }
@@ -113,20 +56,6 @@ a.header-link:hover {
     color: rgb(170, 170, 170);
 }
 
-a.headerbar-link:hover {
-    color: rgb(170, 170, 170);
-}
-
-a.headerbar-link {
-    color: rgb(100, 100, 100);
-    font-size: 20px;
-    padding: 1%;
-    padding-top: 2%;
-}
-
-a.headerbar-link:hover {
-    background-color: transparent;
-}
 table {
     border-spacing: 10px;
     border-collapse: separate;
