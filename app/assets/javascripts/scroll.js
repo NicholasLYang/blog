@@ -32,8 +32,10 @@ $(document).ready(function() {
     );
     $(".header-bar-icon").click(
         function() {
-            $(".header-bar-icon").toggleClass("rotated");
             hidden = !hidden;
+            if (hidden) {
+                $(".header-bar-list").slideUp();
+            }
         });
 });
 
