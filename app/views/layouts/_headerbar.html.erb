@@ -1,15 +1,26 @@
 <div class="header-bar max-header-bar">
-  <span class="header-bar-icon">
-    <%= image_tag "hamburger_icon.svg" %>
-  </span>
-  <span class="header-bar-main">
-    <%= link_to 'Home', root_path, class: "headerbar-link", method: :get %>
-    <%= link_to 'About', welcome_index_path, class: "headerbar-link" %>
-    <%= link_to 'Posts', articles_path, class: "headerbar-link" %>
-  </span>
-  <ul class="header-bar-list">
-    <li> <%= link_to 'Home', root_path, class: "headerlist-link", method: :get %>
-    <li> <%= link_to 'About', welcome_index_path, class: "headerlist-link" %>
-    <li> <%= link_to 'Posts', articles_path, class: "headerlist-link" %>
-  </ul>
+    <span class="header-bar-icon">
+        <%= image_tag "hamburger_icon.svg" %>
+    </span>
+    <span class="header-bar-main">
+        <%= link_to 'Home', root_path, class: "headerbar-link", method: :get %>
+        <%= link_to 'About', welcome_index_path, class: "headerbar-link" %>
+        <%= link_to 'Posts', articles_path, class: "headerbar-link" %>
+    </span>
+    <ul class="header-bar-list">
+        <li> <%= link_to 'Home', root_path, class: "headerlist-link", method: :get %>
+            <li> <%= link_to 'About', welcome_index_path, class: "headerlist-link" %>
+                <li> <%= link_to 'Posts', articles_path, class: "headerlist-link" %>
+                    <% if current_user %>
+                        <li><%= link_to 'Logout', destroy_user_session_path, class: 'userinfo-link', method: :delete %>
+                            <% if current_user.is_admin? %>
+                                <li> <%= link_to 'New Post', new_admin_article_path, class: 'userinfo-link', method: :get %>
+                                    <li> <%= link_to 'List Posts', admin_articles_path, class: 'userinfo-link', method: :get %>
+                            <% end %>
+                    <% else %>
+                            <li> <%= link_to 'Login', new_user_session_path, class: 'userinfo-link', method: :get %>
+                                <li> <%= link_to 'Create User', new_user_registration_path, class: 'userinfo-link'%>
+                    <% end %>
+
+    </ul>
 </div>

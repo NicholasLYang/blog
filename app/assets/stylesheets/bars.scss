@@ -20,7 +20,7 @@
         list-style-type: none;
     }
     li {
-        padding-bottom: 5px;
+        padding-bottom: 10px;
         font-size: 20px;
     }
 
@@ -70,6 +70,7 @@
     }
     .header-bar-list {
         display: none;
+        line-height: 1.8em;
     }
 }
 
