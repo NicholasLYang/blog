@@ -1,3 +1,15 @@
+.rotated {
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -moz-transform: rotate(90deg); /* Firefox */
+    -webkit-transform: rotate(90deg); /* Safari and Chrome */
+    -o-transform: rotate(90deg); /* Opera */
+}
+.header-bar-img {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
 .bar {
     position: fixed;
     z-index: 100;
@@ -12,7 +24,7 @@
     margin-bottom: 1%;
     left: 5%;
 
-    ul.header-bar-list {
+    ul {
         display: none;
         background: white;
         padding: 20px;
@@ -25,7 +37,7 @@
     }
 
     a:hover {
-        color: rgb(170, 170, 170);
+        background-color: transparent;
     }
 
     a {
@@ -35,11 +47,8 @@
         padding-top: 2%;
     }
 
-    a.headerbar-link:hover {
-        background-color: transparent;
-    }
-
 }
+
 
 .max-header-bar {
     .header-bar-icon {
@@ -71,6 +80,7 @@
     .header-bar-list {
         display: none;
         line-height: 1.8em;
+
     }
 }
 
