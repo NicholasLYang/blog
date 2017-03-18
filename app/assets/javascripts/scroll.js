@@ -37,9 +37,11 @@ function maxBars() {
     return false;
 }
 
+
 $(document).ready(function() {
     if (is_mobile) {
-        $(".header-bar").addClass("min-header-bar");
+        $(".header-bar").switchClass("max-header-bar",
+                                     "min-header-bar");
     }
 
     $(".header-bar").hover(
