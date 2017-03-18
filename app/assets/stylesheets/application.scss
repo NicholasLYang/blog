@@ -92,12 +92,12 @@ button {
 }
 
 @media (max-device-width: 600px) {
-    .bar {
-        position: static;
-        margin: 10px;
+    body {
+        padding-top: 2%;
     }
     .user-bar {
-        width: 125px
+        position: static;
+        display: none;
     }
     .tagline {
         width: 200px;

@@ -1,10 +1,11 @@
-var is_not_mobile = window.matchMedia("(min-width: 600px)").matches
+var is_mobile = window.matchMedia("(max-width: 600px)").matches
 var minimized = false;
 var locked = false;
 
 
+
 $(window).scroll(function () {
-    if ($(document).scrollTop() > 50) {
+    if (is_mobile || $(document).scrollTop() > 50) {
         minimized = minBars();
     }
     else{
@@ -37,6 +38,9 @@ function maxBars() {
 }
 
 $(document).ready(function() {
+    if (is_mobile) {
+        $(".header-bar").addClass("min-header-bar");
+    }
 
     $(".header-bar").hover(
         function() {
