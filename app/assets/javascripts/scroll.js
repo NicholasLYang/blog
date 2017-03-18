@@ -13,14 +13,14 @@ $(window).scroll(function () {
 });
 
 function minBars() {
-    $('.header-bar').switchClass("max-header-bar",
-                                 "min-header-bar",
-                                 200);
-    $('.user-bar').slideUp();
-    $('.alert-bar').slideUp();
     if (!locked) {
         $(".header-bar-list").slideUp();
     }
+    $('.user-bar').slideUp();
+    $('.alert-bar').slideUp();
+    $('.header-bar').switchClass("max-header-bar",
+                                 "min-header-bar",
+                                 200);
     return true
 }
 
