@@ -66,6 +66,9 @@ table {
 .article-table {
 
 }
+ul {
+    margin: 15px;
+}
 
 div.header{
     padding-bottom: 1%;
@@ -95,11 +98,17 @@ button {
     body {
         padding-top: 2%;
     }
+    .body {
+        padding: 0 0 0 0;
+    }
     .user-bar {
         position: static;
         display: none;
     }
     .tagline {
         width: 200px;
+    }
+    ul {
+        margin: 10px;
     }
 }
