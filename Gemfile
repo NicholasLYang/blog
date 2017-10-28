@@ -70,9 +70,10 @@ gem 'pry-rails', :group => :development
 # User authentication
 gem 'devise'
 
-# TODO: Add OmniAuth
-gem 'omniauth-facebook'
-
+gem "omniauth-facebook"
 # tags for posts
 gem 'acts-as-taggable-on', '~> 4.0'
+gem 'graphql'
+gem "graphiql-rails"
 
+gem 'graphiql-rails', group: :development

@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+user = User.create({ name: "Nicholas", email: "nick@nicholasyang.com", is_admin: true })
+articles = Article.create(
+  [
+    { title: "My article", body: "lorem ipsum dolores", user_id: user.id },
+    { title: "My article 2", body: "lorem ipsum dolores", user_id: user.id }
+  ]
+)
+                          
