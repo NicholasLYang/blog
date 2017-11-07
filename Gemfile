@@ -77,3 +77,4 @@ gem 'graphql'
 gem "graphiql-rails"
 
 gem 'graphiql-rails', group: :development
+gem 'rack-cors', :require => 'rack/cors'

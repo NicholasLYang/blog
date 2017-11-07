@@ -4,4 +4,5 @@ Types::ArticleType = GraphQL::ObjectType.define do
   field :title, !types.String
   field :body, !types.String
   field :user_id, !types.ID
+  field :comments, types[!Types::CommentType]
 end
