@@ -13,4 +13,4 @@ articles = Article.create(
     { title: "My article 2", body: "lorem ipsum dolores", user_id: user.id }
   ]
 )
-                          
+
